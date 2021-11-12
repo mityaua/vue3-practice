@@ -1,5 +1,6 @@
 <template>
-  <Button>Click me</Button>
+  <h1>{{ title }}</h1>
+  <Button @click="increment">Click me</Button>
 </template>
 
 <script>
@@ -9,6 +10,24 @@ export default {
   name: "App",
   components: {
     Button,
+  },
+  // Аналог стейта, функция которая возвращает обьект
+  data() {
+    return {
+      totalClicks: 0,
+    };
+  },
+  // Вычисляет на основе даты или пропсов + кеширует. Внутри функциию с обязательным возвратом!
+  computed: {
+    title() {
+      return `Total clicks: ${this.totalClicks}`;
+    },
+  },
+  // Методы компонента. Внутри функции
+  methods: {
+    increment() {
+      this.totalClicks += 1;
+    },
   },
 };
 </script>

@@ -1,3 +1,4 @@
+// Привязка атрибута из пропсов + типизация пропсов
 <template>
   <button v-bind:type="type">
     <slot></slot>
