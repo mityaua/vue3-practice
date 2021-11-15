@@ -1,13 +1,13 @@
 <template>
   <h1>{{ title }}</h1>
-  <Button @click="increment">Click me</Button>
+  <Button @click="increment" outlined>Click me</Button>
 </template>
 
 <script>
-import Button from "./components/Button.vue";
+import Button from './components/Button.vue';
 
 export default {
-  name: "App",
+  name: 'App',
   components: {
     Button,
   },
