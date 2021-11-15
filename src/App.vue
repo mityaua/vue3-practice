@@ -1,15 +1,18 @@
 <template>
   <h1>{{ title }}</h1>
   <Button @click="increment" outlined>Click me</Button>
+  <DirectiveTest />
 </template>
 
 <script>
 import Button from './components/Button.vue';
+import DirectiveTest from './components/DirectivesTest.vue';
 
 export default {
   name: 'App',
   components: {
     Button,
+    DirectiveTest,
   },
   // Аналог стейта, функция которая возвращает обьект
   data() {
