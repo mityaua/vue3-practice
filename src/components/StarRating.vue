@@ -5,14 +5,14 @@
     <span
       class="star star--outlined"
       v-for="index in starLimit"
-      v-bind:key="index"
+      :key="index"
     ></span>
 
     <div class="star-rating__colored" :style="ratingWidthStyle">
       <span
         class="star star--colored"
         v-for="index in starLimit"
-        v-bind:key="index"
+        :key="index"
       ></span>
     </div>
   </div>
@@ -66,11 +66,11 @@ export default {
   flex-shrink: 0;
 
   &--colored {
-    background: url('../assets/star.svg') center no-repeat;
+    background: url('../assets/star-colored.svg') center no-repeat;
   }
 
   &--outlined {
-    background: url('../assets/star-2.svg') center no-repeat;
+    background: url('../assets/star-outlined.svg') center no-repeat;
   }
 }
 </style>

@@ -26,4 +26,4 @@ npm run lint
 
 ### Design
 
-See [Link](<https://www.figma.com/file/zE0MyZjPRCaywyY4unFRNN/Untitled-(Copy)?node-id=0%3A1>).
+See [Link](<https://www.figma.com/file/zE0MyZjPRCaywyY4unFRNN/Untitled-(Copy)?node-id=0%3A1>)

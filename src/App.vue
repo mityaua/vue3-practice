@@ -1,20 +1,14 @@
 <template>
   <h1>{{ title }}</h1>
-  <!-- <Button @click="increment" outlined>Click me</Button> -->
-  <!-- <DirectiveTest /> -->
   <StarRating :rating="4" />
 </template>
 
 <script>
-// import Button from './components/Button.vue';
-// import DirectiveTest from './components/DirectivesTest.vue';
 import StarRating from './components/StarRating.vue';
 
 export default {
   name: 'App',
   components: {
-    // Button,
-    // DirectiveTest,
     StarRating,
   },
   // Аналог стейта, функция которая возвращает обьект
