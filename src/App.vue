@@ -1,6 +1,6 @@
 <template>
   <h1>{{ title }}</h1>
-  <StarRating :rating="4" />
+  <StarRating :rating="3.5" />
 </template>
 
 <script>

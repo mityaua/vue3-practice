@@ -3,16 +3,15 @@
 <template>
   <div class="star-rating">
     <span
+      v-for="idx in starLimit"
+      :key="idx"
       class="star star--outlined"
-      v-for="index in starLimit"
-      :key="index"
     ></span>
-
     <div class="star-rating__colored" :style="ratingWidthStyle">
       <span
+        v-for="idx in starLimit"
+        :key="idx"
         class="star star--colored"
-        v-for="index in starLimit"
-        :key="index"
       ></span>
     </div>
   </div>
@@ -30,19 +29,19 @@ export default {
       type: Number,
       default: 5,
     },
-    computed: {
-      ratingWidth() {
-        return (this.rating / this.starLimit) * 100;
-      },
-      ratingWidthStyle() {
-        return `width: ${this.ratingWidth}%;`;
-      },
+  },
+  computed: {
+    ratingWidth() {
+      return (this.rating / this.starLimit) * 100;
+    },
+    ratingWidthStyle() {
+      return `width: ${this.ratingWidth}%;`;
     },
   },
 };
 </script>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .star-rating {
   position: relative;
   display: inline-flex;
