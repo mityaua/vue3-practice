@@ -51,10 +51,19 @@ export default {
 .apartments-item {
   position: relative;
   max-width: 350px;
-  padding: 0 20px;
+  // padding: 0 15px;
 
   &__inner {
     position: relative;
+  }
+
+  &__photo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   &__content {
@@ -82,6 +91,8 @@ export default {
 
   &__description {
     margin-bottom: 20px;
+    max-height: calc(1em * 1.4 * 4);
+    overflow: hidden;
   }
 
   &__rating {
@@ -91,15 +102,6 @@ export default {
   &__price {
     font-size: 20px;
     font-weight: 600;
-  }
-
-  &__photo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
   }
 }
 </style>
