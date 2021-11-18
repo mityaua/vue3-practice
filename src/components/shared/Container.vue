@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <slot></slot>
+    <slot>Содержимое слота по умолчанию</slot>
   </div>
 </template>
 

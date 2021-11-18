@@ -1,27 +1,28 @@
 <template>
   <Container>
+    <!-- Паттерн именованных слотов -->
+    <slot>Дефолтный слот</slot>
+
+    <slot name="title"></slot>
+
     <div class="apartments-list">
-      <ApartmentsItem
-        v-for="{ id, description, price, rating, imgUrl } in items"
-        :key="id"
-        :description="description"
-        :price="price"
-        :rating="rating"
-        :imgSrc="imgUrl"
-        class="apartments-list__item"
-      /></div
-  ></Container>
+      <template v-for="apartment in items">
+        <slot name="apartment" v-bind:apartment="apartment"></slot>
+      </template>
+    </div>
+
+    <!-- Паттерн именованных слотов -->
+    <slot name="description"></slot>
+  </Container>
 </template>
 
 <script>
 import Container from '../shared/Container.vue';
-import ApartmentsItem from './ApartmentsItem.vue';
 
 export default {
   name: 'ApartmentsList',
   components: {
     Container,
-    ApartmentsItem,
   },
   props: {
     items: {
@@ -39,12 +40,11 @@ export default {
   margin-left: -30px;
   margin-top: -30px;
 
-  &__item {
-    flex-basis: calc(100% / 3 - 30px);
+  // &__item {
+  //   flex-basis: calc(100% / 3 - 30px);
 
-    margin-left: 30px;
-    margin-top: 30px;
-    // margin-bottom: 30px;
-  }
+  //   margin-left: 30px;
+  //   margin-top: 30px;
+  // }
 }
 </style>
