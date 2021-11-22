@@ -1,8 +1,5 @@
 <template>
   <Container>
-    <!-- Паттерн именованных слотов -->
-    <slot>Дефолтный слот</slot>
-
     <slot name="title"></slot>
 
     <div class="apartments-list">
@@ -10,9 +7,6 @@
         <slot name="apartment" v-bind:apartment="apartment"></slot>
       </template>
     </div>
-
-    <!-- Паттерн именованных слотов -->
-    <slot name="description"></slot>
   </Container>
 </template>
 

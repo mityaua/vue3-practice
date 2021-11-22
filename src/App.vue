@@ -1,8 +1,9 @@
 <template>
+  <p>{{ text }}</p>
+  <CustomInput v-model="text" />
+
   <ApartmentsList :items="apartments">
-    <template v-slot:default>Дефолтный слот уровнем выше</template>
-    <template v-slot:title>Новый тайтл</template>
-    <template v-slot:description>Новое описание</template>
+    <template v-slot:title>Пример тайтла в слоте</template>
 
     <template v-slot:apartment="{ apartment }">
       <ApartmentsItem
@@ -11,6 +12,7 @@
         :price="apartment.price"
         :rating="apartment.rating"
         :imgSrc="apartment.imgUrl"
+        @click="handleItemClick"
       />
     </template>
   </ApartmentsList>
@@ -20,18 +22,28 @@
 import apartments from './components/apartment/apartments';
 import ApartmentsList from './components/apartment/ApartmentsList';
 import ApartmentsItem from './components/apartment/ApartmentsItem.vue';
+import CustomInput from './components/shared/CustomInput.vue';
 
 export default {
   name: 'App',
   components: {
     ApartmentsList,
     ApartmentsItem,
+    CustomInput,
   },
   data() {
     return {
+      text: '',
       apartments,
     };
   },
+  methods: {
+    handleItemClick() {
+      console.log('item click in App');
+    },
+  },
+  // Заменяет модификатор native (документирует свои события с помощью опции emits)
+  // emits: ['close'],
 };
 </script>
 
