@@ -1,5 +1,9 @@
 <template>
-  <input v-bind="$attrs" class="custom-input" />
+  <input
+    :value="modelValue"
+    @input="$emit('update:modelValue', $event.target.value)"
+    class="custom-input"
+  />
   {{ $attrs }}
 </template>
 
