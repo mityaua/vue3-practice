@@ -1,16 +1,23 @@
 <template>
-  <input
-    :value="modelValue"
-    @input="$emit('update:modelValue', $event.target.value)"
-    class="custom-input"
-  />
-  {{ $attrs }}
+  <input :value="modelValue" @input="handleInput" class="custom-input" />
 </template>
 
 <script>
 export default {
-  // inheritAttrs: false,
   name: 'CustomInput',
+  props: {
+    modelValue: {
+      type: String,
+      required: true,
+    },
+  },
+  emits: ['update:modelValue'],
+  methods: {
+    handleInput(event) {
+      this.$emit('update:modelValue', event.target.value);
+      console.log(event.target.value);
+    },
+  },
 };
 </script>
 
@@ -20,9 +27,13 @@ export default {
 .custom-input {
   min-height: 40px;
   border: 2px solid $main-color;
-  font-size: 18px;
-  outline: none;
-  line-height: inherit;
   padding: 8px 15px;
+  max-width: 220px;
+  width: 100%;
+
+  font-size: 18px;
+  line-height: inherit;
+
+  outline: 1px solid transparent;
 }
 </style>

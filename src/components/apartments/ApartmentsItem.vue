@@ -64,7 +64,7 @@ export default {
 <style lang="scss" scoped>
 .apartments-item {
   position: relative;
-  max-width: 350px;
+  // width: 33.333%;
 
   flex-basis: calc(100% / 3 - 30px);
 

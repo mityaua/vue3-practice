@@ -1,57 +1,68 @@
 <template>
-  <p>{{ text }}</p>
-  <CustomInput v-model="text" />
+  <div id="app">
+    <h1>{{ text }}</h1>
 
-  <ApartmentsList :items="apartments">
-    <template v-slot:title>Пример тайтла в слоте</template>
+    <Container
+      ><ApartmentsFilterForm @submit="logger" class="apartments-filter"
+    /></Container>
 
-    <template v-slot:apartment="{ apartment }">
-      <ApartmentsItem
-        :key="apartment.id"
-        :description="apartment.description"
-        :price="apartment.price"
-        :rating="apartment.rating"
-        :imgSrc="apartment.imgUrl"
-        @click="handleItemClick"
-      />
-    </template>
-  </ApartmentsList>
+    <ApartmentsList :items="mockData">
+      <template v-slot:apartment="{ apartment }">
+        <ApartmentsItem
+          :key="apartment.id"
+          :description="apartment.description"
+          :price="apartment.price"
+          :rating="apartment.rating"
+          :imgSrc="apartment.imgUrl"
+          @click="handleItemClick"
+        />
+      </template>
+    </ApartmentsList>
+  </div>
 </template>
 
 <script>
-import apartments from './components/apartment/apartments';
-import ApartmentsList from './components/apartment/ApartmentsList';
-import ApartmentsItem from './components/apartment/ApartmentsItem.vue';
-import CustomInput from './components/shared/CustomInput.vue';
+import mockData from './components/apartments/mock-data';
+import ApartmentsList from './components/apartments/ApartmentsList.vue';
+import ApartmentsItem from './components/apartments/ApartmentsItem.vue';
+import ApartmentsFilterForm from './components/apartments/ApartmentsFilterForm.vue';
+import Container from './components/shared/Container.vue';
+// import CustomInput from './components/shared/CustomInput.vue';
+// import CustomSelect from './components/shared/CustomSelect.vue';
 
 export default {
   name: 'App',
   components: {
+    Container,
     ApartmentsList,
     ApartmentsItem,
-    CustomInput,
+    ApartmentsFilterForm,
+    // CustomInput,
+    // CustomSelect,
   },
   data() {
     return {
       text: '',
-      apartments,
+      mockData,
     };
   },
   methods: {
-    handleItemClick() {
-      console.log('item click in App');
+    logger(value) {
+      console.log(value, 'form value');
     },
   },
-  // Заменяет модификатор native (документирует свои события с помощью опции emits)
-  // emits: ['close'],
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
 #app {
   font-family: Montserrat, Helvetica, Arial, sans-serif;
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.apartments-filter {
+  margin-bottom: 40px;
 }
 </style>
