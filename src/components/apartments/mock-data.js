@@ -8,8 +8,8 @@ export default [
       'https://cdn.pixabay.com/photo/2021/11/08/11/19/buildings-6778915_960_720.jpg',
     price: 1250,
     rating: 5,
-    locaton: {
-      city: 'Kyiv',
+    location: {
+      city: 'Киев',
     },
     owner: {
       name: 'Anna',
@@ -26,8 +26,8 @@ export default [
       'https://cdn.pixabay.com/photo/2020/11/01/10/35/street-5703332_960_720.jpg',
     price: 1000,
     rating: 3.5,
-    locaton: {
-      city: 'Kyiv',
+    location: {
+      city: 'Киев',
     },
     owner: {
       name: 'Anna',
@@ -44,8 +44,8 @@ export default [
       'https://cdn.pixabay.com/photo/2021/08/30/21/29/port-6587129_960_720.jpg',
     price: 2500,
     rating: 4,
-    locaton: {
-      city: 'Kyiv',
+    location: {
+      city: 'Харьков',
     },
     owner: {
       name: 'Anna',
@@ -62,8 +62,8 @@ export default [
       'https://cdn.pixabay.com/photo/2015/07/09/22/45/tree-838667_960_720.jpg',
     price: 2000,
     rating: 1,
-    locaton: {
-      city: 'Kyiv',
+    location: {
+      city: 'Мариуполь',
     },
     owner: {
       name: 'Anna',
@@ -80,8 +80,8 @@ export default [
       'https://cdn.pixabay.com/photo/2017/05/09/03/46/alberta-2297204_960_720.jpg',
     price: 2000,
     rating: 2.5,
-    locaton: {
-      city: 'Kyiv',
+    location: {
+      city: 'Днепр',
     },
     owner: {
       name: 'Anna',
@@ -98,8 +98,8 @@ export default [
       'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg',
     price: 5000,
     rating: 2,
-    locaton: {
-      city: 'Kyiv',
+    location: {
+      city: 'Полтава',
     },
     owner: {
       name: 'Anna',

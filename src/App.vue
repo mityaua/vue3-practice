@@ -1,10 +1,11 @@
 <template>
   <div id="app">
     <Container
-      ><ApartmentsFilterForm @submit="logger" class="apartments-filter"
+      ><ApartmentsFilterForm @submit="filter" class="apartments-filter"
     /></Container>
 
-    <ApartmentsList :items="mockData">
+    <p v-if="!filteredApartments.length">Ничего не найдено</p>
+    <ApartmentsList v-else :items="filteredApartments">
       <template v-slot:apartment="{ apartment }">
         <ApartmentsItem
           :key="apartment.id"
@@ -36,12 +37,35 @@ export default {
   data() {
     return {
       mockData,
+      filters: {
+        city: '',
+        price: '',
+      },
     };
   },
+  computed: {
+    filteredApartments() {
+      return this.filterByCityName(this.filterByPrice(this.mockData));
+    },
+  },
   methods: {
-    logger(value) {
-      console.log(value);
-      alert(`Отправили форму ${JSON.stringify(value)}`);
+    filter({ city, price }) {
+      this.filters.city = city;
+      this.filters.price = price;
+    },
+    filterByCityName(apartments) {
+      if (!this.filters.city) return apartments;
+
+      return apartments.filter(apartment => {
+        return apartment.location.city === this.filters.city;
+      });
+    },
+    filterByPrice(apartments) {
+      if (!this.filters.price) return apartments;
+
+      return apartments.filter(apartment => {
+        return apartment.price >= this.filters.price;
+      });
     },
   },
 };
