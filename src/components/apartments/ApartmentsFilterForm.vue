@@ -1,7 +1,7 @@
 <template>
   <form class="form" @submit.prevent="handleSubmit">
-    <CustomSelect :items="['name', 'age', 'salary']" class="form__select" />
-    <CustomInput v-model="text" />
+    <CustomSelect v-model="city" :items="cities" class="form__select" />
+    <CustomInput v-model="price" placeholder="Цена, от" />
     <SubmitButton type="submit" class="form__submit">Подбор жилья</SubmitButton>
   </form>
 </template>
@@ -20,13 +20,35 @@ export default {
   },
   data() {
     return {
-      text: '',
+      city: '',
+      price: '',
     };
+  },
+  computed: {
+    cities() {
+      return [
+        {
+          value: '',
+          label: 'Город',
+          selected: true,
+          disabled: true,
+          hidden: true,
+        },
+        'Киев',
+        'Одесса',
+        'Полтава',
+        'Харьков',
+        'Днепр',
+        'Львов',
+        'Херсон',
+        'Мариуполь',
+      ];
+    },
   },
   emits: ['submit'],
   methods: {
     handleSubmit() {
-      this.$emit('submit', { select: 'пока пустой', input: this.text });
+      this.$emit('submit', { city: this.city, price: this.price });
     },
   },
 };

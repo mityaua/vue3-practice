@@ -1,9 +1,12 @@
 <template>
-  <select @input="handleSelect" class="custom-select">
+  <select :value="modelValue" @input="handleSelect" class="custom-select">
     <option
       v-for="item in formattedItems"
       :key="item.value"
       :value="item.value"
+      :selected="item.selected"
+      :disabled="item.disabled"
+      :hidden="item.hidden"
     >
       {{ item.label }}
     </option>
@@ -18,6 +21,10 @@ export default {
       type: Array,
       required: true,
     },
+    modelValue: {
+      type: String,
+      required: true,
+    },
   },
   computed: {
     formattedItems() {
@@ -26,11 +33,10 @@ export default {
       });
     },
   },
-  // emits: ['update:modelValue'],
+  emits: ['update:modelValue'],
   methods: {
     handleSelect(event) {
-      // this.$emit('update:modelValue', event.target.value);
-      console.log(event.target.value);
+      this.$emit('update:modelValue', event.target.value);
     },
   },
 };

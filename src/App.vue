@@ -41,6 +41,7 @@ export default {
   methods: {
     logger(value) {
       console.log(value);
+      alert(`Отправили форму ${JSON.stringify(value)}`);
     },
   },
 };

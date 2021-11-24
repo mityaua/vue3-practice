@@ -15,7 +15,6 @@ export default {
   methods: {
     handleInput(event) {
       this.$emit('update:modelValue', event.target.value);
-      console.log(event.target.value);
     },
   },
 };
@@ -35,5 +34,9 @@ export default {
   line-height: inherit;
 
   outline: 1px solid transparent;
+
+  &::placeholder {
+    color: inherit;
+  }
 }
 </style>
