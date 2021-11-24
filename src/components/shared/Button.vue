@@ -1,4 +1,5 @@
-// Привязка атрибута из пропсов + типизация пропсов + баиндинг (привязка) классов + завязка класса на пропсе
+// Привязка атрибута из пропсов + типизация пропсов + баиндинг (привязка)
+классов + завязка класса на пропсе
 <template>
   <button v-bind:type="type" :class="{ btn: true, 'btn--outlined': outlined }">
     <slot></slot>
@@ -21,15 +22,19 @@ export default {
 };
 </script>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .btn {
   display: inline-block;
-  font-size: 18px;
+  min-width: 220px;
+  padding: 8px 15px;
+  border: 1px solid transparent;
+
   background: #ff662d;
   color: #fff;
-  min-width: 220px;
-  border: 1px solid transparent;
-  padding: 8px 15px;
+
+  font-size: 18px;
+
+  cursor: pointer;
 
   &--outlined {
     background: none;

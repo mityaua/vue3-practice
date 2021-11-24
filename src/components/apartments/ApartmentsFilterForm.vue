@@ -1,13 +1,8 @@
 <template>
   <form class="form" @submit.prevent="handleSubmit">
-    <!-- <CustomInput v-model="text" />
-  <CustomSelect :items="['name', 'age', 'salary']" /> -->
-
     <CustomSelect :items="['name', 'age', 'salary']" class="form__select" />
-    <CustomInput />
-    <SubmitButton :type="submit" class="form__submit"
-      >Подбор жилья</SubmitButton
-    >
+    <CustomInput v-model="text" />
+    <SubmitButton type="submit" class="form__submit">Подбор жилья</SubmitButton>
   </form>
 </template>
 
@@ -23,9 +18,15 @@ export default {
     CustomSelect,
     SubmitButton,
   },
+  data() {
+    return {
+      text: '',
+    };
+  },
+  emits: ['submit'],
   methods: {
     handleSubmit() {
-      this.$emit('submit', 'form submited');
+      this.$emit('submit', { select: 'пока пустой', input: this.text });
     },
   },
 };

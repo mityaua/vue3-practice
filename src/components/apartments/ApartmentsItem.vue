@@ -13,11 +13,6 @@
         </div>
 
         <div class="apartments-item__price">UAH {{ price }} за ночь</div>
-
-        <!-- Ссылка для примера, с отменой дефолтного поведения линков и всплытия -->
-        <a href="https://google.com" @click.prevent.stop="handleLinkClick"
-          >Link</a
-        >
       </div>
     </div>
   </div>
@@ -47,15 +42,6 @@ export default {
     imgSrc: {
       type: String,
       default: '',
-    },
-  },
-  methods: {
-    log(number, event) {
-      console.log(number);
-      console.log(event);
-    },
-    handleLinkClick() {
-      console.log('click on link');
     },
   },
 };
