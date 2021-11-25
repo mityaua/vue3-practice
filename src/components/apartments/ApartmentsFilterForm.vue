@@ -1,7 +1,7 @@
 <template>
   <form class="form" @submit.prevent="handleSubmit">
-    <CustomSelect v-model="city" :items="cities" class="form__select" />
-    <CustomInput v-model="price" placeholder="Цена, от" />
+    <CustomSelect v-model:city="city" :items="cities" class="form__select" />
+    <CustomInput v-model:price="price" placeholder="Цена, от" />
     <SubmitButton type="submit" class="form__submit">Подбор жилья</SubmitButton>
   </form>
 </template>

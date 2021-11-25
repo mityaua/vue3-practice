@@ -48,9 +48,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../../assets/scss/variables.scss';
+
 .apartments-item {
   position: relative;
-  // width: 33.333%;
 
   flex-basis: calc(100% / 3 - 30px);
 
@@ -68,6 +69,8 @@ export default {
     width: 100%;
     height: 100%;
     object-fit: cover;
+
+    background-color: $main-color;
   }
 
   &__content {

@@ -1,20 +1,20 @@
 <template>
-  <input :value="modelValue" @input="handleInput" class="custom-input" />
+  <input :value="price" @input="handleInput" class="custom-input" />
 </template>
 
 <script>
 export default {
   name: 'CustomInput',
   props: {
-    modelValue: {
+    price: {
       type: String,
       required: true,
     },
   },
-  emits: ['update:modelValue'],
+  emits: ['update:price'],
   methods: {
     handleInput(event) {
-      this.$emit('update:modelValue', event.target.value);
+      this.$emit('update:price', event.target.value);
     },
   },
 };

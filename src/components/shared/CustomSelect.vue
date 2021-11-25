@@ -1,5 +1,5 @@
 <template>
-  <select :value="modelValue" @input="handleSelect" class="custom-select">
+  <select :value="city" @input="handleSelect" class="custom-select">
     <option
       v-for="item in formattedItems"
       :key="item.value"
@@ -21,7 +21,7 @@ export default {
       type: Array,
       required: true,
     },
-    modelValue: {
+    city: {
       type: String,
       required: true,
     },
@@ -33,10 +33,10 @@ export default {
       });
     },
   },
-  emits: ['update:modelValue'],
+  emits: ['update:city'],
   methods: {
     handleSelect(event) {
-      this.$emit('update:modelValue', event.target.value);
+      this.$emit('update:city', event.target.value);
     },
   },
 };

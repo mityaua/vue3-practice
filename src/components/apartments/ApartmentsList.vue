@@ -33,12 +33,5 @@ export default {
   flex-wrap: wrap;
   margin-left: -30px;
   margin-top: -30px;
-
-  // &__item {
-  //   flex-basis: calc(100% / 3 - 30px);
-
-  //   margin-left: 30px;
-  //   margin-top: 30px;
-  // }
 }
 </style>
