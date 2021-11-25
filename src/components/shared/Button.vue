@@ -23,23 +23,32 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../../assets/scss/variables.scss';
+
 .btn {
   display: inline-block;
   min-width: 220px;
   padding: 8px 15px;
   border: 1px solid transparent;
 
-  background: #ff662d;
+  background: $main-color;
   color: #fff;
 
   font-size: 18px;
 
+  opacity: 1;
+  transition: opacity $transition-duration $transition-timing;
   cursor: pointer;
 
   &--outlined {
     background: none;
-    border: 1px solid #ff662d;
-    color: #ff662d;
+    border: 1px solid $main-color;
+    color: $main-color;
+  }
+
+  &:hover,
+  &:focus {
+    opacity: 0.8;
   }
 }
 </style>
