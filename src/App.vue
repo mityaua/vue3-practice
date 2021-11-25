@@ -1,35 +1,49 @@
 <template>
-  <div id="app">
-    <Container
-      ><ApartmentsFilterForm @submit="filter" class="apartments-filter"
-    /></Container>
+  <div id="in-app">
+    <div class="content">
+      <Header />
 
-    <p v-if="!filteredApartments.length">Ничего не найдено</p>
-    <ApartmentsList v-else :items="filteredApartments">
-      <template v-slot:apartment="{ apartment }">
-        <ApartmentsItem
-          :key="apartment.id"
-          :description="apartment.description"
-          :price="apartment.price"
-          :rating="apartment.rating"
-          :imgSrc="apartment.imgUrl"
-        />
-      </template>
-    </ApartmentsList>
+      <main>
+        <Container
+          ><ApartmentsFilterForm @submit="filter" class="apartments-filter"
+        /></Container>
+
+        <Container
+          ><p v-if="!filteredApartments.length">Ничего не найдено</p>
+          <ApartmentsList v-else :items="filteredApartments">
+            <template v-slot:apartment="{ apartment }">
+              <ApartmentsItem
+                :key="apartment.id"
+                :description="apartment.description"
+                :price="apartment.price"
+                :rating="apartment.rating"
+                :imgSrc="apartment.imgUrl"
+              />
+            </template> </ApartmentsList
+        ></Container>
+      </main>
+    </div>
+
+    <Footer />
   </div>
 </template>
 
 <script>
 import mockData from './components/apartments/mock-data';
+
+import Header from './components/shared/Header.vue';
+import Container from './components/shared/Container.vue';
 import ApartmentsList from './components/apartments/ApartmentsList.vue';
 import ApartmentsItem from './components/apartments/ApartmentsItem.vue';
 import ApartmentsFilterForm from './components/apartments/ApartmentsFilterForm.vue';
-import Container from './components/shared/Container.vue';
+import Footer from './components/shared/Footer.vue';
 
 export default {
   name: 'App',
   components: {
+    Header,
     Container,
+    Footer,
     ApartmentsList,
     ApartmentsItem,
     ApartmentsFilterForm,
@@ -72,11 +86,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#app {
+#in-app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   font-family: Montserrat, Helvetica, Arial, sans-serif;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+}
+
+.content {
+  flex-grow: 1;
+  padding-top: 120px;
 }
 
 .apartments-filter {

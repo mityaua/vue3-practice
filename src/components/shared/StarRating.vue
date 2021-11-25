@@ -65,11 +65,11 @@ export default {
   flex-shrink: 0;
 
   &--colored {
-    background: url('../assets/star-colored.svg') center no-repeat;
+    background: url('../../assets/images/star-colored.svg') center no-repeat;
   }
 
   &--outlined {
-    background: url('../assets/star-outlined.svg') center no-repeat;
+    background: url('../../assets/images/star-outlined.svg') center no-repeat;
   }
 }
 </style>

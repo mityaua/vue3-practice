@@ -33,5 +33,6 @@ export default {
   flex-wrap: wrap;
   margin-left: -30px;
   margin-top: -30px;
+  margin-bottom: 100px; // под вопросом
 }
 </style>
