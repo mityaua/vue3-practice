@@ -19,7 +19,6 @@
           :to="{
             name: 'apartment',
             params: { id },
-            query: { name: 'query-example' },
           }"
           class="apartments-item__link"
         ></router-link>

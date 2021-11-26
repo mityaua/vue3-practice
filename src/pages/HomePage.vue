@@ -1,22 +1,24 @@
 <template>
-  <Container>
-    <ApartmentsFilterForm @submit="filter" class="apartments-filter"
-  /></Container>
+  <main>
+    <Container>
+      <ApartmentsFilterForm @submit="filter" class="apartments-filter"
+    /></Container>
 
-  <Container
-    ><p v-if="!filteredApartments.length">Ничего не найдено</p>
-    <ApartmentsList v-else :items="filteredApartments">
-      <template v-slot:apartment="{ apartment }">
-        <ApartmentsItem
-          :key="apartment.id"
-          :id="apartment.id"
-          :description="apartment.description"
-          :price="apartment.price"
-          :rating="apartment.rating"
-          :imgSrc="apartment.imgUrl"
-        />
-      </template> </ApartmentsList
-  ></Container>
+    <Container
+      ><p v-if="!filteredApartments.length">Ничего не найдено</p>
+      <ApartmentsList v-else :items="filteredApartments">
+        <template v-slot:apartment="{ apartment }">
+          <ApartmentsItem
+            :key="apartment.id"
+            :id="apartment.id"
+            :description="apartment.description"
+            :price="apartment.price"
+            :rating="apartment.rating"
+            :imgSrc="apartment.imgUrl"
+          />
+        </template> </ApartmentsList
+    ></Container>
+  </main>
 </template>
 
 <script>

@@ -30,7 +30,7 @@ export default [
       city: 'Киев',
     },
     owner: {
-      name: 'Anna',
+      name: 'Алекс',
       phone: '0979752844',
       email: 'test@gmail.com',
     },
@@ -39,7 +39,7 @@ export default [
     id: '3',
     title: 'Тестовое название апартаментов-3',
     description:
-      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero, quis accusamus molestias porro recusandae aliquam error ipsum cum dicta sint iste eligendi impedit!',
+      'Не очень но роскошные апартаменты в скайндинавском стиле с панорамным видом на реку и бесплатным Wi-Fi.',
     imgUrl:
       'https://cdn.pixabay.com/photo/2021/08/30/21/29/port-6587129_960_720.jpg',
     price: 2500,
@@ -48,7 +48,7 @@ export default [
       city: 'Харьков',
     },
     owner: {
-      name: 'Anna',
+      name: 'Инна',
       phone: '0979752844',
       email: 'test@gmail.com',
     },
@@ -66,7 +66,7 @@ export default [
       city: 'Мариуполь',
     },
     owner: {
-      name: 'Anna',
+      name: 'Ваня',
       phone: '0979752844',
       email: 'test@gmail.com',
     },
@@ -75,7 +75,7 @@ export default [
     id: '5',
     title: 'Тестовое название апартаментов-5',
     description:
-      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero, quis accusamus molestias porro recusandae aliquam error ipsum cum dicta sint iste eligendi impedit!',
+      'Комплекс апартаментов расположен в отреставрированном историческом здании с видом на реку Дору. К услугам гостей роскошные апартаменты с панорамным видом на реку и бесплатным Wi-Fi. В некоторых апартаментах есть балкон с видом на реку. Во всех апартаментах имеется просторная гостиная с телевизором с плоским экраном и кабельными каналами и двуспальным диваном- кроватью.Мини - кухня оборудована духовкой, холодильником и микроволновой печью, а в собственной ванной комнате предоставляются бесплатные туалетно - косметические принадлежности.Гостям предоставляются полотенца и постельное белье. Позавтракать гости могут в различных кафе и на террасах вдоль реки и на площади Кубо. Супермаркет находится менее чем в 5 минутах ходьбы.',
     imgUrl:
       'https://cdn.pixabay.com/photo/2017/05/09/03/46/alberta-2297204_960_720.jpg',
     price: 2000,
@@ -84,7 +84,7 @@ export default [
       city: 'Днепр',
     },
     owner: {
-      name: 'Anna',
+      name: 'Григорий',
       phone: '0979752844',
       email: 'test@gmail.com',
     },
@@ -102,7 +102,7 @@ export default [
       city: 'Полтава',
     },
     owner: {
-      name: 'Anna',
+      name: 'Максим',
       phone: '0979752844',
       email: 'test@gmail.com',
     },
