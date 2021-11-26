@@ -14,6 +14,7 @@
 
         <div class="apartments-item__price">UAH {{ price }} за ночь</div>
 
+        <!-- Ссылка-обёртка для роутера (направляет на страницу апартаментов с id и query параметрами) -->
         <router-link
           :to="{
             name: 'apartment',

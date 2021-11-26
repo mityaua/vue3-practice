@@ -16,13 +16,9 @@ const routes = [
     name: 'apartment',
   },
   {
-    path: '/404',
+    path: '/:catchAll(.*)',
     component: ErrorPage,
     name: 'error-page',
-  },
-  {
-    path: '/:catchAll(.*)',
-    redirect: '/404',
   },
 ];
 
