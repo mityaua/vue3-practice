@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import mockData from '../components/apartments/mock-data';
+import apartmentsData from '../mock/apartments';
 
 import Container from '../components/shared/Container.vue';
 import ApartmentsList from '../components/apartments/ApartmentsList.vue';
@@ -39,7 +39,7 @@ export default {
   },
   data() {
     return {
-      mockData,
+      apartmentsData,
       filters: {
         city: '',
         price: '',
@@ -48,7 +48,7 @@ export default {
   },
   computed: {
     filteredApartments() {
-      return this.filterByCityName(this.filterByPrice(this.mockData));
+      return this.filterByCityName(this.filterByPrice(this.apartmentsData));
     },
   },
   methods: {

@@ -1,22 +1,30 @@
 <template>
-  <main class="apartment-page">
-    <Container>
+  <Container>
+    <main class="apartment-page">
       <div class="apartment-page__content">
         <ApartmentsMainInfo :apartment="apartment" />
-        <ApartmentsOwner
-          :owner="apartment.owner"
-          class="apartment-page__owner"
-        />
+
+        <div class="apartment-page__additional-info">
+          <ApartmentsOwner
+            :owner="apartment.owner"
+            class="apartment-page__owner"
+          />
+
+          <ReviewsList :reviews="reviewsList" />
+        </div>
       </div>
-    </Container>
-  </main>
+    </main>
+  </Container>
 </template>
 
 <script>
-import mockData from '../components/apartments/mock-data';
+import apartmentsData from '../mock/apartments';
+import reviewsData from '../mock/reviews.json';
+
 import Container from '../components/shared/Container.vue';
 import ApartmentsMainInfo from '../components/apartments/ApartmentsMainInfo.vue';
 import ApartmentsOwner from '../components/apartments/ApartmentsOwner.vue';
+import ReviewsList from '../components/reviews/ReviewsList.vue';
 
 export default {
   name: 'ApartmentPage',
@@ -24,14 +32,17 @@ export default {
     Container,
     ApartmentsMainInfo,
     ApartmentsOwner,
+    ReviewsList,
   },
   computed: {
     apartment() {
-      return mockData.find(apartment => apartment.id === this.$route.params.id);
+      return apartmentsData.find(
+        apartment => apartment.id === this.$route.params.id,
+      );
     },
-  },
-  mounted() {
-    console.log(this.apartment);
+    reviewsList() {
+      return reviewsData;
+    },
   },
 };
 </script>
@@ -45,9 +56,13 @@ export default {
     align-items: flex-start;
   }
 
-  &__owner {
-    min-width: 350px;
+  &__additional-info {
     margin-left: 30px;
+    min-width: 350px;
+  }
+
+  &__owner {
+    margin-bottom: 20px;
   }
 }
 </style>

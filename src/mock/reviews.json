@@ -1,0 +1,26 @@
+[
+  {
+    "author": "Helen",
+    "comment": "Пример комментария пользователя об этом заведении",
+    "rating": 4,
+    "id": 1
+  },
+  {
+    "author": "Борис Бритва",
+    "comment": "We mock that which we don't understand, and then we get to experience it ourselves.",
+    "rating": 2,
+    "id": 2
+  },
+  {
+    "author": "Баракуда",
+    "comment": "What are you gonna do, angel face? Stab me with your eyebrow pencil?",
+    "rating": 3.5,
+    "id": 3
+  },
+  {
+    "author": "Ада",
+    "comment": "Пример комментария пользователя об этом заведении 2",
+    "rating": 1.5,
+    "id": 4
+  }
+]

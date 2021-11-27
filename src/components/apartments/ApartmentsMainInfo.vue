@@ -3,7 +3,7 @@
     <div class="apartment-main-info__heading">
       <h1 class="apartment-main-info__title">{{ apartment.title }}</h1>
 
-      <StarRating :rating="apartment.rating" />
+      <Rating :rating="apartment.rating" />
     </div>
 
     <img
@@ -18,12 +18,12 @@
 </template>
 
 <script>
-import StarRating from '../shared/StarRating.vue';
+import Rating from '../shared/StarRating.vue';
 
 export default {
   name: 'ApartmentsMainInfo',
   components: {
-    StarRating,
+    Rating,
   },
   props: {
     apartment: {
@@ -56,7 +56,6 @@ export default {
   }
 
   &__description {
-    font-weight: 500;
     line-height: 1.218;
   }
 }
