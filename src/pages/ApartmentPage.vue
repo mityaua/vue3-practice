@@ -44,6 +44,31 @@ export default {
       return reviewsData;
     },
   },
+  // Хуки жизненного цикла
+  beforeCreate() {
+    console.log(this.reviewsList, 'beforeCreate');
+  },
+  created() {
+    console.log(this.reviewsList, 'created');
+  },
+  beforeMount() {
+    console.log(this.$el, 'beforeMount');
+  },
+  mounted() {
+    console.log(this.$el, 'mounted');
+  },
+  beforeUnmount() {
+    console.log(this.$el, 'beforeUnmount');
+  },
+  unmounted() {
+    console.log(this.$el, 'unmounted');
+  },
+  beforeUpdate() {
+    console.log('Вызов хука перед обновлением компонента');
+  },
+  updated() {
+    console.log('Вызов хука обновновления компонента');
+  },
 };
 </script>
 
@@ -59,6 +84,7 @@ export default {
   &__additional-info {
     margin-left: 30px;
     min-width: 350px;
+    max-width: 350px;
   }
 
   &__owner {

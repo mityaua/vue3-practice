@@ -43,10 +43,11 @@ export default {
     };
   },
   computed: {
+    // Счетчик отзывов
     reviewsCount() {
       return this.reviews.length;
     },
-
+    // Средний рейтинг по всем отзывам
     totalRating() {
       const total = this.reviews.reduce(
         (acc, review) => (acc += review.rating),
@@ -55,9 +56,11 @@ export default {
 
       return total / this.reviews.length;
     },
+    // Текущий массив для отображения (на основе лимита из даты)
     currentReviews() {
       return this.reviews.slice(0, this.reviewsLimit);
     },
+    // Текст для кнопки на основе длинны массива и лимита
     buttonText() {
       return this.reviews.length === this.reviewsLimit
         ? 'Свернуть'
@@ -65,6 +68,7 @@ export default {
     },
   },
   methods: {
+    // Открывает все отзывы
     toggleReviews() {
       if (this.reviewsLimit === this.reviews.length) {
         this.reviewsLimit = 2;
