@@ -11,7 +11,7 @@
           <ApartmentsItem
             :key="apartment.id"
             :id="apartment.id"
-            :description="apartment.description"
+            :description="apartment.descr"
             :price="apartment.price"
             :rating="apartment.rating"
             :imgSrc="apartment.imgUrl"
@@ -22,7 +22,8 @@
 </template>
 
 <script>
-import apartmentsData from '../mock/apartments';
+// import apartmentsData from '../mock/apartments';
+import { getApartmentsList } from '../services/apartments-service';
 
 import Container from '../components/shared/Container.vue';
 import ApartmentsList from '../components/apartments/ApartmentsList.vue';
@@ -39,7 +40,7 @@ export default {
   },
   data() {
     return {
-      apartmentsData,
+      apartmentsData: [],
       filters: {
         city: '',
         price: '',
@@ -70,6 +71,16 @@ export default {
         return apartment.price >= this.filters.price;
       });
     },
+  },
+  async created() {
+    try {
+      const { data } = await getApartmentsList();
+      this.apartmentsData = data;
+
+      console.table(data);
+    } catch (error) {
+      console.error(error);
+    }
   },
 };
 </script>

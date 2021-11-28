@@ -1,7 +1,7 @@
 <template>
   <Container>
     <main class="apartment-page">
-      <div class="apartment-page__content">
+      <div v-if="apartment" class="apartment-page__content">
         <ApartmentsMainInfo :apartment="apartment" />
 
         <div class="apartment-page__additional-info">
@@ -18,8 +18,9 @@
 </template>
 
 <script>
-import apartmentsData from '../mock/apartments';
-import reviewsData from '../mock/reviews.json';
+// import apartmentsData from '../mock/apartments';
+import { getApartmentById } from '../services/apartments-service';
+// import reviewsData from '../mock/reviews.json';
 
 import Container from '../components/shared/Container.vue';
 import ApartmentsMainInfo from '../components/apartments/ApartmentsMainInfo.vue';
@@ -34,22 +35,30 @@ export default {
     ApartmentsOwner,
     ReviewsList,
   },
+  data() {
+    return {
+      apartment: null,
+    };
+  },
   computed: {
-    apartment() {
-      return apartmentsData.find(
-        apartment => apartment.id === this.$route.params.id,
-      );
-    },
     reviewsList() {
-      return reviewsData;
+      return this.apartment.reviews;
     },
   },
   // Хуки жизненного цикла
   beforeCreate() {
     console.log(this.reviewsList, 'beforeCreate');
   },
-  created() {
-    console.log(this.reviewsList, 'created');
+  async created() {
+    try {
+      const { id } = this.$route.params;
+      const { data } = await getApartmentById(id);
+      this.apartment = data;
+
+      console.table(data);
+    } catch (error) {
+      console.error(error);
+    }
   },
   beforeMount() {
     console.log(this.$el, 'beforeMount');

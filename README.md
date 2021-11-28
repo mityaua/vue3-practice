@@ -24,6 +24,9 @@ npm run build
 npm run lint
 ```
 
-### Design
+### Resources
 
-See [Link](<https://www.figma.com/file/zE0MyZjPRCaywyY4unFRNN/Untitled-(Copy)?node-id=0%3A1>)
+Figma
+[Link](<https://www.figma.com/file/zE0MyZjPRCaywyY4unFRNN/Untitled-(Copy)?node-id=0%3A1>)
+
+API [Link](https://apt-booking-api.herokuapp.com/docs/)
