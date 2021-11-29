@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import Container from './Container.vue';
-import Logo from './Logo.vue';
+import Container from './shared/Container.vue';
+import Logo from './shared/Logo.vue';
 
 export default {
   name: 'Header',
@@ -22,7 +22,7 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-@import '../../assets/scss/variables.scss';
+@import '../assets/scss/variables.scss';
 
 .header {
   position: absolute;

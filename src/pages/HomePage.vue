@@ -76,8 +76,6 @@ export default {
     try {
       const { data } = await getApartmentsList();
       this.apartmentsData = data;
-
-      console.table(data);
     } catch (error) {
       console.error(error);
     }

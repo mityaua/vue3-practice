@@ -19,8 +19,8 @@
 
 <script>
 // import apartmentsData from '../mock/apartments';
-import { getApartmentById } from '../services/apartments-service';
 // import reviewsData from '../mock/reviews.json';
+import { getApartmentById } from '../services/apartments-service';
 
 import Container from '../components/shared/Container.vue';
 import ApartmentsMainInfo from '../components/apartments/ApartmentsMainInfo.vue';
@@ -47,36 +47,34 @@ export default {
   },
   // Хуки жизненного цикла
   beforeCreate() {
-    console.log(this.reviewsList, 'beforeCreate');
+    // console.log(this.reviewsList, 'beforeCreate');
   },
   async created() {
     try {
       const { id } = this.$route.params;
       const { data } = await getApartmentById(id);
       this.apartment = data;
-
-      console.table(data);
     } catch (error) {
       console.error(error);
     }
   },
   beforeMount() {
-    console.log(this.$el, 'beforeMount');
+    // console.log(this.$el, 'beforeMount');
   },
   mounted() {
-    console.log(this.$el, 'mounted');
+    // console.log(this.$el, 'mounted');
   },
   beforeUnmount() {
-    console.log(this.$el, 'beforeUnmount');
+    // console.log(this.$el, 'beforeUnmount');
   },
   unmounted() {
-    console.log(this.$el, 'unmounted');
+    // console.log(this.$el, 'unmounted');
   },
   beforeUpdate() {
-    console.log('Вызов хука перед обновлением компонента');
+    // console.log('Вызов хука перед обновлением компонента');
   },
   updated() {
-    console.log('Вызов хука обновновления компонента');
+    // console.log('Вызов хука обновновления компонента');
   },
 };
 </script>
