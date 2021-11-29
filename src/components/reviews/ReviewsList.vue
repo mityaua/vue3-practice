@@ -15,11 +15,15 @@
       :review="review"
     />
 
-    <button class="reviews__show-more" @click="toggleReviews">
+    <button
+      v-if="reviewsCount"
+      class="reviews__show-more"
+      @click="toggleReviews"
+    >
       {{ buttonText }}
     </button>
   </section>
-</template> 
+</template>
 
 <script>
 import ReviewsItem from './ReviewsItem.vue';
