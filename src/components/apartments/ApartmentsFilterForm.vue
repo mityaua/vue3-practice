@@ -2,6 +2,7 @@
   <form class="form" @submit.prevent="handleSubmit">
     <CustomSelect v-model:city="city" :items="cities" class="form__select" />
     <CustomInput
+      type="number"
       v-model:price="price"
       error-message="Не должно быть пустым"
       :rules="rules"
@@ -32,10 +33,8 @@ export default {
     };
   },
   computed: {
-    computed: {
-      rules() {
-        return [isRequired, charLimit(10)];
-      },
+    rules() {
+      return [isRequired, charLimit(10)];
     },
     cities() {
       return [
